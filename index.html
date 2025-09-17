@@ -1,0 +1,279 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>EquityLens — Scan purchases, see ownership, invest</title>
+  <meta name="description" content="Scan products or receipts to reveal ownership and how money flows to shareholders — then invest in the companies behind what you buy. Discover indie alternatives too.">
+  <style>
+    :root { --bg: #f8fafc; --fg: #0f172a; --muted:#475569; --card:#fff; --border:#e2e8f0; --accent:#0f172a; }
+    *{box-sizing:border-box} html,body{margin:0;padding:0;font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial;color:var(--fg);background:linear-gradient(#f8fafc,#ffffff)}
+    a{color:inherit;text-decoration:none}
+    .container{max-width:1100px;margin:0 auto;padding:0 16px}
+    .nav{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.7);backdrop-filter:blur(8px);border-bottom:1px solid var(--border)}
+    .nav-inner{display:flex;align-items:center;justify-content:space-between;padding:12px 0}
+    .brand{display:flex;align-items:center;gap:8px;font-weight:600}
+    .badge{width:32px;height:32px;border-radius:12px;background:var(--accent);color:#fff;display:grid;place-items:center;font-weight:700}
+    .links{display:none;gap:20px;font-size:14px}
+    .cta{display:inline-flex;align-items:center;gap:8px;background:var(--accent);color:#fff;padding:8px 16px;border-radius:14px;box-shadow:0 6px 18px rgba(2,6,23,.12)}
+    @media(min-width:768px){.links{display:flex}}
+    .hero{padding:80px 0}
+    .h1{font-size:clamp(32px,4vw,48px);font-weight:800;letter-spacing:-.02em}
+    .p{color:var(--muted);font-size:18px;line-height:1.6}
+    .btn{display:inline-flex;align-items:center;gap:8px;padding:12px 18px;border-radius:14px;font-weight:600}
+    .btn-primary{background:var(--accent);color:#fff;box-shadow:0 6px 18px rgba(2,6,23,.12)}
+    .btn-outline{border:1px solid var(--border);color:var(--fg)}
+    .row{display:grid;grid-template-columns:1fr;gap:36px;align-items:center}
+    @media(min-width:960px){.row{grid-template-columns:1.2fr 1fr}}
+    .device{border:1px solid var(--border);border-radius:24px;background:#fff;box-shadow:0 10px 30px rgba(2,6,23,.08);padding:16px}
+    .screen{border-radius:20px;background:linear-gradient(135deg,#0f172a,#334155);color:#fff;padding:24px}
+    .grid2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+    .tile{background:rgba(255,255,255,.1);padding:12px;border-radius:12px}
+    .bar{height:8px;width:100%;background:rgba(255,255,255,.25);border-radius:999px;overflow:hidden}
+    .bar>div{height:100%;width:40%;background:rgba(255,255,255,.9)}
+    .section{padding:64px 0}
+    .cards{display:grid;grid-template-columns:1fr;gap:16px}
+    @media(min-width:960px){.cards{grid-template-columns:repeat(3,1fr)}}
+    .card{background:var(--card);border:1px solid var(--border);border-radius:20px;padding:24px;box-shadow:0 4px 16px rgba(2,6,23,.04)}
+    .muted{color:var(--muted);font-size:14px}
+    .title{font-weight:700;font-size:22px;margin:6px 0}
+    .list{list-style:none;padding:0;margin:18px 0 0}
+    .list li{display:flex;gap:10px;align-items:flex-start;margin:8px 0;font-size:14px}
+    .pill{display:inline-block;padding:3px 8px;font-size:11px;border-radius:999px;background:#0f172a;color:#fff}
+    .cta-band{background:#0f172a;color:#fff;padding:64px 0}
+    .cta-buttons a{background:#fff;color:#0f172a;padding:12px 18px;border-radius:14px;font-weight:600}
+    .footer{padding:40px 0;color:#64748b;font-size:14px}
+    .logoRow{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;opacity:.7;margin-top:12px}
+    @media(min-width:768px){.logoRow{grid-template-columns:repeat(6,1fr)}}
+    .logoItem{height:40px;border:1px solid var(--border);border-radius:14px;display:grid;place-items:center;font-size:12px}
+    .center{text-align:center}
+    .notice{background:#fff7ed;border:1px solid #fed7aa;color:#9a3412;border-radius:14px;padding:12px 14px;font-size:13px}
+    .invest-cta{display:flex;flex-wrap:wrap;gap:10px;margin-top:12px}
+    .small{font-size:12px}
+  </style>
+</head>
+<body>
+  <nav class="nav">
+    <div class="container nav-inner">
+      <div class="brand">
+        <div class="badge">EL</div><span>EquityLens</span>
+      </div>
+      <div class="links">
+        <a href="#features">Features</a>
+        <a href="#how">How it works</a>
+        <a href="#pricing">Pricing</a>
+        <a href="#invest">Invest</a>
+        <a href="#faq">FAQ</a>
+      </div>
+      <a href="#invest" class="cta">Invest from scans →</a>
+    </div>
+  </nav>
+
+  <header class="hero">
+    <div class="container row">
+      <div>
+        <h1 class="h1">Scan what you buy. See who owns it. <br/>Invest in the companies behind it.</h1>
+        <p class="p">EquityLens reveals the corporate structure behind brands, the shareholder breakdown, and how your spend flows to owners — then lets you <strong>jump to your broker</strong> to invest in the public companies you discover. Plus, find <strong>indie alternatives</strong> instantly.</p>
+        <div style="display:flex; flex-wrap:wrap; gap:10px; margin-top:18px;">
+          <a href="#invest" class="btn btn-primary">Try scan → invest</a>
+          <a href="#demo" class="btn btn-outline">Watch 60s demo</a>
+        </div>
+        <div style="display:flex; gap:16px; margin-top:12px;" class="muted">
+          <span>🔒 Privacy-first</span>
+          <span>✨ AI-powered insights</span>
+          <span>📈 Invest via your broker</span>
+        </div>
+      </div>
+      <div>
+        <div class="device">
+          <div class="screen">
+            <div class="muted" style="color: rgba(255,255,255,0.8); font-size:12px; text-transform:uppercase; letter-spacing:.15em;">Receipt scan</div>
+            <div style="margin-top:6px; font-weight:600; font-size: 20px;">Grocery Store • $42.18</div>
+            <div class="grid2" style="margin-top:14px;">
+              <div class="tile"><div style="opacity:.8;">Brand</div><div style="font-weight:600;">HouseholdCo</div></div>
+              <div class="tile"><div style="opacity:.8;">Parent</div><div style="font-weight:600;">MegaCorp PLC</div></div>
+              <div class="tile"><div style="opacity:.8;">Top Shareholder</div><div style="font-weight:600;">Global Fund (12.4%)</div></div>
+              <div class="tile"><div style="opacity:.8;">Alt Option</div><div style="font-weight:600;">IndieClean (Founder‑owned)</div></div>
+            </div>
+            <div style="margin-top:14px; font-size:12px; opacity:.85;">Money flow (purchase → owners)</div>
+            <div class="bar"><div></div></div>
+            <div class="invest-cta">
+              <a href="#invest" class="btn btn-primary" style="background:#22c55e">Buy MegaCorp PLC →</a>
+              <a href="#invest" class="btn btn-outline" style="color:#fff;border-color:rgba(255,255,255,.6)">Add to watchlist</a>
+            </div>
+          </div>
+          <div class="muted" style="padding:14px;">Instant ownership intel. Ethical alternatives. Invest from what you already buy.</div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <section class="section">
+    <div class="container">
+      <div class="center muted">Data sources & disclosures</div>
+      <div class="logoRow">
+        <div class="logoItem">EDGAR</div>
+        <div class="logoItem">OpenFIGI</div>
+        <div class="logoItem">WDI</div>
+        <div class="logoItem">EU NCA</div>
+        <div class="logoItem">Crunchbase</div>
+        <div class="logoItem">Annual Reports</div>
+      </div>
+    </div>
+  </section>
+
+  <section id="features" class="section" style="background:#f1f5f9;">
+    <div class="container">
+      <h2 style="font-size:28px; font-weight:800;">Everything you need to follow the money — and act on it</h2>
+      <div class="cards" style="margin-top:24px;">
+        <div class="card">
+          <div class="title">Scan products & receipts</div>
+          <div class="muted">Barcode or OCR scan in seconds. Identify the brand, parent entity, and map to public ownership records.</div>
+        </div>
+        <div class="card">
+          <div class="title">Ownership & money flow</div>
+          <div class="muted">See corporate structure, major shareholders, and estimates of how your spend reaches each owner.</div>
+        </div>
+        <div class="card">
+          <div class="title">Invest from scans</div>
+          <div class="muted">Jump directly to supported brokers to buy the public companies you discover. We pass the ticker; you review and place orders with your broker.</div>
+        </div>
+        <div class="card">
+          <div class="title">Indie alternatives</div>
+          <div class="muted">Find similar products from independent brands and startups to align purchases with your values.</div>
+        </div>
+        <div class="card">
+          <div class="title">Watchlists & alerts</div>
+          <div class="muted">Save tickers from scans, track changes in ownership, and get alerts when holdings shift.</div>
+        </div>
+        <div class="card">
+          <div class="title">Privacy & compliance</div>
+          <div class="muted">We never hold your brokerage credentials. Investing happens on your broker’s platform. Your data stays yours.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="how" class="section">
+    <div class="container">
+      <h2 style="font-size:28px; font-weight:800;">How it works</h2>
+      <div class="cards" style="margin-top:24px;">
+        <div class="card"><div class="title">1) Scan or search</div><div class="muted">Scan a barcode/receipt or search a brand.</div></div>
+        <div class="card"><div class="title">2) Reveal ownership</div><div class="muted">See parent company and major shareholders; understand the money flow.</div></div>
+        <div class="card"><div class="title">3) Invest via your broker</div><div class="muted">Tap “Buy” to open your connected broker with the correct ticker prefilled (where supported).</div></div>
+      </div>
+      <div class="notice" style="margin-top:18px;">Disclaimer: For informational purposes only. Not investment advice. Investing involves risk, including loss of principal. EquityLens is not a broker-dealer or investment adviser. Trades are executed by your selected broker.</div>
+    </div>
+  </section>
+
+  <section id="invest" class="section" style="background:#f1f5f9;">
+    <div class="container">
+      <h2 style="font-size:28px; font-weight:800;">Investing, your way</h2>
+      <div class="cards" style="margin-top:24px;">
+        <div class="card">
+          <div class="title">Broker deep links</div>
+          <div class="muted">We support deep links to popular brokers. Tap “Buy” in EquityLens and continue in your broker’s app/site.</div>
+          <ul class="list">
+            <li>✔︎ No custody of funds or securities by EquityLens</li>
+            <li>✔︎ Works with your existing broker account</li>
+            <li>✔︎ Regional availability may vary</li>
+          </ul>
+        </div>
+        <div class="card">
+          <div class="title">Affiliate disclosure</div>
+          <div class="muted">Some broker or merchant links may be affiliate links. We may receive compensation if you sign up or transact. This helps keep EquityLens affordable.</div>
+        </div>
+        <div class="card">
+          <div class="title">Control & privacy</div>
+          <div class="muted">We don’t collect your login credentials. You can clear scans and watchlists anytime.</div>
+        </div>
+      </div>
+      <div style="margin-top:18px; display:flex; gap:12px; flex-wrap:wrap;">
+        <a href="#" class="btn btn-primary">Connect a broker</a>
+        <a href="#" class="btn btn-outline">See supported brokers</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="pricing" class="section">
+    <div class="container">
+      <h2 style="font-size:28px; font-weight:800;">Simple, transparent pricing</h2>
+      <div class="cards" style="margin-top:24px;">
+        <div class="card">
+          <div style="display:flex; align-items:baseline; gap:8px;">
+            <div class="title" style="margin:0;">Free</div><span class="pill">Popular</span>
+          </div>
+          <div style="font-size:28px; font-weight:800; margin-top:8px;">$0</div>
+          <div class="muted">Get started in seconds</div>
+          <ul class="list">
+            <li>✔︎ 10 scans / month</li>
+            <li>✔︎ Basic ownership tree</li>
+            <li>✔︎ Indie suggestions</li>
+          </ul>
+        </div>
+        <div class="card">
+          <div class="title" style="margin:0;">Pro</div>
+          <div style="font-size:28px; font-weight:800; margin-top:8px;">$5 / mo</div>
+          <div class="muted">Investing features & alerts</div>
+          <ul class="list">
+            <li>✔︎ Unlimited scans</li>
+            <li>✔︎ Broker deep links</li>
+            <li>✔︎ Watchlists & alerts</li>
+          </ul>
+        </div>
+        <div class="card">
+          <div class="title" style="margin:0;">Teams</div>
+          <div style="font-size:28px; font-weight:800; margin-top:8px;">Custom</div>
+          <div class="muted">For NGOs & journalists</div>
+          <ul class="list">
+            <li>✔︎ Bulk workflows</li>
+            <li>✔︎ Audit trails</li>
+            <li>✔︎ API access</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="faq" class="section">
+    <div class="container">
+      <h2 style="font-size:28px; font-weight:800;">FAQs</h2>
+      <div class="cards" style="margin-top:24px;">
+        <div class="card"><div class="title">Do you execute trades?</div><div class="muted">No. We are not a broker. Trades are executed by your chosen broker via deep links.</div></div>
+        <div class="card"><div class="title">Is this investment advice?</div><div class="muted">No. EquityLens provides information only. Always do your own research and consider consulting a financial professional.</div></div>
+        <div class="card"><div class="title">Which brokers are supported?</div><div class="muted">Support varies by region. We aim to support major brokers that allow deep linking to tickers and order screens.</div></div>
+        <div class="card"><div class="title">Where does the ownership data come from?</div><div class="muted">Public company filings, fund disclosures, and trusted datasets. We combine sources and show ranges when appropriate.</div></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="cta" class="cta-band">
+    <div class="container" style="display:grid; grid-template-columns:1fr; gap:16px; align-items:center;">
+      <div>
+        <div style="font-size:28px; font-weight:800;">Make every purchase a vote — and an opportunity.</div>
+        <p style="opacity:.9;">Reveal ownership from your receipts and invest via your broker in minutes.</p>
+      </div>
+      <div class="cta-buttons" style="display:flex; gap:12px; flex-wrap:wrap;">
+        <a href="#">Get the app (Soon)</a>
+        <a href="#invest">Connect a broker</a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container" style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:14px;">
+      <div style="display:flex; align-items:center; gap:8px;">
+        <div class="badge" style="width:28px; height:28px; font-size:11px;">EL</div>
+        <span>© <span id="year"></span> EquityLens</span>
+      </div>
+      <div style="display:flex; gap:16px;">
+        <a href="#">Privacy</a>
+        <a href="#">Terms</a>
+        <a href="#">Contact</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>
